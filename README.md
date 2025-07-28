@@ -4,6 +4,8 @@ This tool helps expanding character set supported by [Augustus](https://github.c
 
 **This tool is heavily vibe coded.**
 
+Julius/Augusts uses 4-bit grayscale for character rendering, and each character comes in 3 sizes - 12x12, 15x15, 20x20. This means every rendered character takes 384.5 bytes storage.
+
 # How to use
 1. Prepare a raw text file in UTF8 encoding. The one present in this repository contains all the characters initially supported by the Chinese version of Caesar 3, do not remove any characters from it and only append new characters.
 2. Prepare a font, be aware of legal requirements. I use [this one](https://github.com/paraself/PingFang-Fonts).
