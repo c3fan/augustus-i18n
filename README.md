@@ -32,3 +32,7 @@ The original workflow requires extensive human operation
 2. Manually output page screenshots of 3 different font sizes
 3. Compile a C program and feed it with the screenshots
 4. Then same steps as this tool to apply to the game
+
+# Fork Update (@xxoommd)
+1. Remove raw text and font arguments, these can be configured in script.
+2. Add '--augustus-project-path|-a' argment. XXX.555 file will copy to Augustus custom assets folder, and related src file (e.g, 'src/core/image.h', 'src/core/encoding_simp_chinese.c') will be altered by script.
