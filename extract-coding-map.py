@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # 从C++代码中提取entries数组并转换为Python字典
 def extract_cpp_entries_to_python_map(cpp_code):
     import re
