@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 """
 Font rendering utility for generating Chinese character font data for the C3 project.
 Handles both Simplified and Traditional Chinese characters with different bit depths.
