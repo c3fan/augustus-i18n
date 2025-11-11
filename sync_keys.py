@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import re
 import argparse
 
@@ -18,8 +19,8 @@ def parse_translation_strings(content):
 
 def main():
     parser = argparse.ArgumentParser(description="Sync translation keys to other language")
-    parser.add_argument("--source-file", default="english.c", help="Path to the source translation file (Default: english.c).")
-    parser.add_argument("--target-file", help="Path to target translation file. (e.g., simplified_chinese.c)")
+    parser.add_argument("--source-file", "-s", required=True, help="Path to the source translation file (Default: english.c).")
+    parser.add_argument("--target-file", "-t", required=True, help="Path to target translation file. (e.g., simplified_chinese.c)")
     parser.add_argument("--dry-run", action="store_true", help="Do not write TARGET_FILE")
     
     args = parser.parse_args()

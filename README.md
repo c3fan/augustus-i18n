@@ -34,5 +34,23 @@ The original workflow requires extensive human operation
 4. Then same steps as this tool to apply to the game
 
 # Fork Update (@xxoommd)
-1. Remove raw text and font arguments, these can be configured in script.
-2. Add '--augustus-project-path|-a' argment. XXX.555 file will copy to Augustus custom assets folder, and related src file (e.g, 'src/core/image.h', 'src/core/encoding_simp_chinese.c') will be altered by script.
+
+## 1. `generate.py`: Generate XXX.file.
+1. Remove raw.txt, all characters are read from `encoding_map` and augustus translation files.
+2. Add '--augustus-project-path|-p' argment.
+3. `XXX.555` file will be saved to Augustus custom assets folder.
+4. Some src files (e.g, `src/core/image.h`, `src/core/encoding_simp_chinese.c`) will be autoupdated.
+
+## 2. `sync_keys.py`: Sync augustus translation keys. For example:
+- Input: 'src/translation/english.c'
+- Output: 'src/translation/simplified_chinese.c'.
+
+All keys in `english.c` will added in `simplified_chinese.c` with same order.
+
+## 3. `eng-convert.py`: c3.eng C3_mm.eng ⇄ c3.xml C3_mm.xml 
+
+## 4. `extract-coding-map.py`: Extract [citybuilding-tools](https://github.com/bvschaik/citybuilding-tools) / `EngConverter` / `XXX_ChineseCodec.cpp` to a python map.
+
+Already extracted files (will be used in other scripts):
+- ./encoding_map/sc.py
+- ./encoding_map/tc.py
